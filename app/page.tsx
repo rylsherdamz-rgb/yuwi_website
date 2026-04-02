@@ -29,19 +29,34 @@ const steps = [
 
 const roadmap = [
   {
-    stage: "Now",
-    title: "Cleaner study workflow",
-    body: "Refining capture, extraction, quiz generation, and review so the app feels easier to use from the first screen.",
+    stage: "V2",
+    title: "TTS reviewer with voice playback",
+    body: "Add text-to-speech to the reviewer so quizzes can be read aloud, making hands-free review and listening practice much easier.",
   },
   {
-    stage: "Next",
-    title: "Smarter review loops",
-    body: "Improve repeat review, make saved quizzes easier to reopen, and reduce friction between sessions.",
+    stage: "V2",
+    title: "Public quiz sharing",
+    body: "Let users publish quiz sets with shareable links so classmates, friends, or communities can open and study the same material.",
   },
   {
-    stage: "Later",
-    title: "More polished app surfaces",
-    body: "Ship stronger onboarding, better feedback states, and a tighter product feel across mobile screens.",
+    stage: "V2",
+    title: "Saved quiz library and collections",
+    body: "Organize created quizzes into folders, subjects, and recent sets so it is easier to revisit study material over time.",
+  },
+  {
+    stage: "V2",
+    title: "Smarter review modes",
+    body: "Expand beyond the basic flow with shuffle, retry-wrong-answers, timed sessions, and progress tracking across review sessions.",
+  },
+  {
+    stage: "V2",
+    title: "Better import and cleanup",
+    body: "Improve OCR cleanup, PDF parsing, and source text editing so the generated quizzes start from cleaner study material.",
+  },
+  {
+    stage: "V2",
+    title: "Stronger onboarding and feedback",
+    body: "Polish first-run guidance, empty states, loading feedback, and error handling so the app feels more dependable for daily use.",
   },
 ] as const;
 
@@ -301,17 +316,17 @@ export default function Home() {
           <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--card)] px-6 py-10 shadow-[0_22px_60px_rgba(43,30,24,0.06)] sm:px-8 lg:px-10">
             <div className="max-w-2xl">
               <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent-strong)]">
-                Roadmap
+                V2 roadmap
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-brand)] text-4xl font-black tracking-[-0.04em]">
-                What Yuwi is growing into next.
+                What Yuwi v2 is planned to add.
               </h2>
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">
-                The focus is not pricing. It is making the app feel cleaner, smarter, and more dependable as a daily study tool.
+                The next version is focused on better review depth, easier sharing, and a more polished day-to-day study experience.
               </p>
             </div>
 
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {roadmap.map((item, index) => (
                 <Reveal key={item.title} delay={index * 80}>
                   <article className="relative overflow-hidden rounded-[1.6rem] border border-[var(--border)] bg-[linear-gradient(180deg,var(--card),var(--surface))] p-6 transition-transform duration-300 hover:-translate-y-1">
@@ -347,19 +362,26 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="/api/download-apk"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--foreground)] px-6 py-4 text-base font-bold text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                Download APK
-              </a>
-              <a
-                href="mailto:hello@yuwi.app"
-                className="inline-flex items-center justify-center rounded-full border border-[var(--border-strong)] bg-[var(--card)] px-6 py-4 text-base font-semibold text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface)]"
-              >
-                Contact
-              </a>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="https://github.com/rylsherdamz-rgb/yuwi_website/releases/download/v1.0/Yuwi-StudyPartner.apk"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--foreground)] px-6 py-4 text-base font-bold text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
+                >
+                  Download APK
+                </a>
+                <a
+                  href="mailto:richiechristiandeguzman11@gmail.com"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--border-strong)] bg-[var(--card)] px-6 py-4 text-base font-semibold text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface)]"
+                >
+                  Contact
+                </a>
+              </div>
+              <p className="text-sm font-semibold text-[var(--muted)]">
+                Google Play Store release is coming soon.
+              </p>
             </div>
           </div>
         </div>

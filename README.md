@@ -70,22 +70,11 @@ That means:
 
 ## APK Download
 
-The download button now points to [app/api/download-apk/route.ts](/home/richie/Projects/yuwi_website/app/api/download-apk/route.ts).
+The download button now points directly to the current GitHub release APK:
 
-That route creates a short-lived Google Cloud Storage signed URL for:
+- `https://github.com/rylsherdamz-rgb/yuwi_website/releases/download/v1.0/Yuwi-StudyPartner.apk`
 
-- `gs://portfolio_files_yuwi/Yuwi-QuizApp.apk`
-
-Configure these environment variables before deploying:
-
-- `GCP_PROJECT_ID`
-- `GCP_CLIENT_EMAIL`
-- `GCP_PRIVATE_KEY`
-- `GCS_BUCKET_NAME`
-- `GCS_APK_OBJECT_PATH`
-- `APK_DOWNLOAD_TTL_SECONDS`
-
-You can copy the values from [.env.example](/home/richie/Projects/yuwi_website/.env.example).
+The download section also notes that the Google Play Store release is coming soon.
 
 ## Development
 
