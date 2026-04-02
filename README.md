@@ -68,6 +68,25 @@ That means:
 - usage is tied to Gemini access and quota
 - switching API keys does not make quiz generation truly unlimited
 
+## APK Download
+
+The download button now points to [app/api/download-apk/route.ts](/home/richie/Projects/yuwi_website/app/api/download-apk/route.ts).
+
+That route creates a short-lived Google Cloud Storage signed URL for:
+
+- `gs://portfolio_files_yuwi/Yuwi-QuizApp.apk`
+
+Configure these environment variables before deploying:
+
+- `GCP_PROJECT_ID`
+- `GCP_CLIENT_EMAIL`
+- `GCP_PRIVATE_KEY`
+- `GCS_BUCKET_NAME`
+- `GCS_APK_OBJECT_PATH`
+- `APK_DOWNLOAD_TTL_SECONDS`
+
+You can copy the values from [.env.example](/home/richie/Projects/yuwi_website/.env.example).
+
 ## Development
 
 Install dependencies:

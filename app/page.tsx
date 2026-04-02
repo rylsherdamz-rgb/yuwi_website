@@ -349,10 +349,10 @@ export default function Home() {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="#"
+                href="/api/download-apk"
                 className="inline-flex items-center justify-center rounded-full bg-[var(--foreground)] px-6 py-4 text-base font-bold text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
               >
-                Android build soon
+                Download APK
               </a>
               <a
                 href="mailto:hello@yuwi.app"
