@@ -8,6 +8,7 @@
   --surface: #fff1e2;
   --border: rgba(126, 99, 84, 0.14);
   --border-strong: rgba(126, 99, 84, 0.22);
+  --accent-border: rgba(240, 138, 52, 0.22);
   --accent: #f08a34;
   --accent-muted: #fff0de;
   --accent-strong: #a95012;
@@ -22,21 +23,20 @@
   --font-mono: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a120e;
-    --foreground: #fff4ea;
-    --muted: #d1b29e;
-    --card: #211812;
-    --surface: #2c1f18;
-    --border: rgba(209, 178, 158, 0.12);
-    --border-strong: rgba(209, 178, 158, 0.18);
-    --accent: #f08a34;
-    --accent-muted: rgba(240, 138, 52, 0.12);
-    --accent-strong: #ffb374;
-    --accent-soft: rgba(240, 138, 52, 0.18);
-    --accent-glow: rgba(240, 138, 52, 0.24);
-  }
+:root[data-theme="dark"] {
+  --background: #1a120e;
+  --foreground: #fff4ea;
+  --muted: #d1b29e;
+  --card: #211812;
+  --surface: #2c1f18;
+  --border: rgba(209, 178, 158, 0.12);
+  --border-strong: rgba(209, 178, 158, 0.18);
+  --accent-border: rgba(240, 138, 52, 0.26);
+  --accent: #f08a34;
+  --accent-muted: rgba(240, 138, 52, 0.12);
+  --accent-strong: #ffb374;
+  --accent-soft: rgba(240, 138, 52, 0.18);
+  --accent-glow: rgba(240, 138, 52, 0.24);
 }
 
 html {
@@ -47,6 +47,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+button {
+  cursor: pointer;
 }
 
 body::selection {
