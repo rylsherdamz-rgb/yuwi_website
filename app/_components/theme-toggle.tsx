@@ -11,19 +11,25 @@ function applyTheme(theme: Theme) {
   document.documentElement.style.colorScheme = theme;
 }
 
+function getPreferredTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  const storedTheme = window.localStorage.getItem(STORAGE_KEY);
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(getPreferredTheme);
 
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem(STORAGE_KEY);
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    const nextTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : systemTheme;
-
-    setTheme(nextTheme);
-    applyTheme(nextTheme);
-  }, []);
+    applyTheme(theme);
+  }, [theme]);
 
   function handleToggle() {
     const nextTheme = theme === "dark" ? "light" : "dark";

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Footer from "./_components/footer";
 import Reveal from "./_components/reveal";
 
 const features = [
@@ -71,7 +72,7 @@ export default function Home() {
         </div>
 
         <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12">
-          <header className="animate-fade-up flex flex-col gap-4 rounded-[1.75rem] border border-[var(--border)] bg-[rgba(255,255,255,0.68)] px-4 py-4 shadow-[0_12px_40px_rgba(43,30,24,0.06)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:px-6 dark:bg-[rgba(33,24,18,0.7)]">
+          <header className="animate-fade-up flex flex-col gap-4 rounded-[1.75rem] border border-[var(--border)] bg-[var(--glass)] px-4 py-4 shadow-[0_12px_40px_rgba(43,30,24,0.06)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:px-6">
             <div className="flex min-w-0 items-center gap-3">
               <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-1.5">
                 <Image
@@ -160,7 +161,7 @@ export default function Home() {
 
             <Reveal delay={120} className="relative flex justify-center lg:justify-end">
               <div className="absolute inset-x-6 top-8 h-[24rem] rounded-full bg-[var(--accent-soft)] blur-3xl sm:inset-x-10 sm:top-10 sm:h-[28rem]" />
-              <div className="animate-float relative w-full max-w-[430px] rounded-[1.75rem] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,245,235,0.88))] p-3 shadow-[0_30px_90px_rgba(43,30,24,0.12)] sm:rounded-[2rem] sm:p-4 dark:bg-[linear-gradient(180deg,rgba(33,24,18,0.98),rgba(42,30,23,0.95))]">
+              <div className="animate-float relative w-full max-w-[430px] rounded-[1.75rem] border border-[var(--border)] bg-[linear-gradient(180deg,var(--hero-shell-top),var(--hero-shell-bottom))] p-3 shadow-[0_30px_90px_rgba(43,30,24,0.12)] sm:rounded-[2rem] sm:p-4">
                 <div className="rounded-[1.4rem] border border-[var(--border)] bg-[var(--card)] p-4 sm:rounded-[1.6rem] sm:p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
@@ -243,21 +244,21 @@ export default function Home() {
       <section className="mx-auto w-full max-w-7xl px-4 pb-6 sm:px-8 sm:pb-8 lg:px-12">
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-          <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--foreground)] px-5 py-8 text-[var(--background)] sm:rounded-[2rem] sm:px-8 sm:py-10">
-            <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent)]">
+          <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--card)] px-5 py-8 text-[var(--foreground)] sm:rounded-[2rem] sm:px-8 sm:py-10">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent-strong)]">
               Privacy
             </p>
             <h2 className="mt-4 font-[family-name:var(--font-brand)] text-4xl font-black tracking-[-0.04em]">
               Keep your study flow local-first.
             </h2>
-            <p className="mt-4 text-base leading-7 text-[rgba(255,249,242,0.76)]">
+            <p className="mt-4 text-base leading-7 text-[var(--muted)]">
               Yuwi stores quiz history and app state locally, keeps setup straightforward, and gives you a cleaner path from capture to review.
             </p>
           </div>
           </Reveal>
 
           <Reveal delay={100}>
-          <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--card)] px-5 py-8 sm:rounded-[2rem] sm:px-8 sm:py-10">
+          <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--card)] px-5 py-8 text-[var(--foreground)] sm:rounded-[2rem] sm:px-8 sm:py-10">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent-strong)]">
               Why it feels different
             </p>
@@ -345,7 +346,7 @@ export default function Home() {
 
       <section id="download" className="mx-auto w-full max-w-7xl px-4 pb-16 pt-4 sm:px-8 lg:px-12">
         <Reveal>
-        <div className="rounded-[1.8rem] border border-[var(--accent-border)] bg-[linear-gradient(135deg,var(--accent-muted),rgba(255,255,255,0.92))] px-5 py-8 shadow-[0_24px_70px_rgba(240,138,52,0.14)] sm:rounded-[2.2rem] sm:px-8 sm:py-10 dark:bg-[linear-gradient(135deg,rgba(56,39,31,0.92),rgba(33,24,18,0.96))]">
+        <div className="rounded-[1.8rem] border border-[var(--accent-border)] bg-[linear-gradient(135deg,var(--download-top),var(--download-bottom))] px-5 py-8 shadow-[0_24px_70px_rgba(240,138,52,0.14)] sm:rounded-[2.2rem] sm:px-8 sm:py-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent-strong)]">
@@ -384,6 +385,8 @@ export default function Home() {
         </div>
         </Reveal>
       </section>
+
+      <Footer />
     </main>
   );
 }

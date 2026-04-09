@@ -14,6 +14,14 @@
   --accent-strong: #a95012;
   --accent-soft: rgba(240, 138, 52, 0.18);
   --accent-glow: rgba(240, 138, 52, 0.28);
+  --glass: rgba(255, 255, 255, 0.68);
+  --hero-shell-top: rgba(255, 255, 255, 0.92);
+  --hero-shell-bottom: rgba(255, 245, 235, 0.88);
+  --download-top: var(--accent-muted);
+  --download-bottom: rgba(255, 255, 255, 0.92);
+  --footer-top: rgba(255, 255, 255, 0.8);
+  --footer-bottom: rgba(255, 241, 226, 0.92);
+  --inverse-muted: rgba(255, 249, 242, 0.76);
 }
 
 @theme inline {
@@ -37,6 +45,14 @@
   --accent-strong: #ffb374;
   --accent-soft: rgba(240, 138, 52, 0.18);
   --accent-glow: rgba(240, 138, 52, 0.24);
+  --glass: rgba(33, 24, 18, 0.7);
+  --hero-shell-top: rgba(33, 24, 18, 0.98);
+  --hero-shell-bottom: rgba(42, 30, 23, 0.95);
+  --download-top: rgba(56, 39, 31, 0.92);
+  --download-bottom: rgba(33, 24, 18, 0.96);
+  --footer-top: rgba(33, 24, 18, 0.96);
+  --footer-bottom: rgba(44, 31, 24, 0.96);
+  --inverse-muted: rgba(43, 30, 24, 0.72);
 }
 
 html {
